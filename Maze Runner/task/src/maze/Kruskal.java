@@ -6,15 +6,10 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Kruskal {
-
-    private Edge[] edges;
-    UnionFind<Point> unionFind;
-    private List<Edge> path;
-    public Kruskal(Edge[] edges){
-        this.edges= edges;
-        this.path = new ArrayList<>();
-        Arrays.sort(this.edges,Comparator.comparing(edge->edge.value));
-        unionFind = new UnionFind<>();
+    public static Edge[] getPath(Edge[] edges){
+        List<Edge>path = new ArrayList<>();
+        Arrays.sort(edges,Comparator.comparing(edge->edge.value));
+        UnionFind<Point> unionFind = new UnionFind<>();
         for (Edge edge:edges){
             unionFind.add(edge.from);
             unionFind.add(edge.to);
@@ -22,8 +17,6 @@ public class Kruskal {
             unionFind.union(edge.from, edge.to);
             path.add(edge);
         }
-    }
-    public List<Edge> getPath() {
-        return path;
+        return path.toArray(new Edge[0]);
     }
 }

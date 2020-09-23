@@ -1,8 +1,9 @@
 package maze;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Point {
+public class Point implements Serializable {
         public final int x;
         public final int y;
 

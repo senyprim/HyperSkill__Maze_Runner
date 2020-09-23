@@ -1,8 +1,9 @@
 package maze;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Edge {
+public class Edge implements Serializable {
     public final double value;
     public final Point from;
     public final Point to;
