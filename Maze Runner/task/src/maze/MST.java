@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-public class Kruskal {
-    public static Edge[] getPath(Edge[] edges){
+public class MST {
+    public static Edge[] getKruskalPath(Edge[] edges){
         List<Edge>path = new ArrayList<>();
         Arrays.sort(edges,Comparator.comparing(edge->edge.value));
         UnionFind<Point> unionFind = new UnionFind<>();

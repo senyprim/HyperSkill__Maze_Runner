@@ -2,7 +2,8 @@ package maze;
 
 public enum  Block {
     EMPTY(0,"  "),
-    WALL(1,"\u2588\u2588");
+    WALL(1,"\u2588\u2588"),
+    PATH(2,"//");
     private int value;
     private String content;
     Block(int value, String content){

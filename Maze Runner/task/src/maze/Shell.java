@@ -22,7 +22,8 @@ public class Shell {
                     "2. Load a maze");
             if (grid!=null) System.out.println(
                     "3. Save the maze\n" +
-                    "4. Display the maze"
+                    "4. Display the maze\n" +
+                    "5. Find the escape"
             );
             System.out.println("0. Exit");
 
@@ -34,6 +35,10 @@ public class Shell {
                 case 2: new CommandLoad(this).run();break;
                 case 3: new CommandSave(this).run();break;
                 case 4: System.out.println(grid.toString());break;
+                case 5: {
+                    grid.setPath(DijkstraPath.getPath(grid.getGraf(), grid.getStart(), grid.getEnd()));
+                    System.out.println(grid.toString());break;
+                }
                 default:throw new IllegalArgumentException("Incorrect option. Please try again");
             }
             System.out.println();

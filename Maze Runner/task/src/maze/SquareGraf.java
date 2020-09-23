@@ -6,13 +6,15 @@ import java.util.*;
 public class SquareGraf {
     private final int width;
     private final int height;
-    private List<Edge> edges;
+    private Set<Edge> edges;
+
     public SquareGraf(int width, int height){
         this.width=width;
         this.height=height;
-        edges=new ArrayList<>();
+        edges=new HashSet<>();
         generateEdges();
     }
+
     private void  generateEdges(){
         Random rnd = new Random();
         for(int y=0;y<this.height;y++){
@@ -27,6 +29,7 @@ public class SquareGraf {
             }
         }
     }
+
     public Edge[] getEdges() {
         return edges.toArray(new Edge[0]);
     }
